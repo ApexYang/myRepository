@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="hap.exam.mapper.OmOrderHeadersMapper">
+    <resultMap id="BaseResultMap" type="hap.exam.dto.OmOrderHeaders">
+        <result column="HEADER_ID" property="headerId" jdbcType="DECIMAL" />
+        <result column="ORDER_NUMBER" property="orderNumber" jdbcType="VARCHAR" />
+        <result column="COMPANY_ID" property="companyId" jdbcType="DECIMAL" />
+        <result column="ORDER_DATE" property="orderDate" jdbcType="DATE" />
+        <result column="ORDER_STATUS" property="orderStatus" jdbcType="VARCHAR" />
+        <result column="CUSTOMER_ID" property="customerId" jdbcType="DECIMAL" />
+    </resultMap>
+    <!--<select id="selectOrderHeader" parameterType="hbi.exam.dto.OmOrderHeaders"
+            resultType="hbi.exam.dto.OmOrderHeaders">
+    SELECT
+    header.ORDER_NUMBER,
+    header.HEADER_ID,
+    header.COMPANY_ID,
+    header.CUSTOMER_ID,
+    header.ORDER_NUMBER,
+    header.ORDER_DATE,
+    header.ORDER_STATUS,
+    company.COMPANY_NAME,
+    customer.CUSTOMER_NAME,
+    SUM(line.UNIT_SELLING_PRICE) SUMPRICE
+    FROM
+    hap_om_order_headers header,
+    hap_ar_customers customer,
+    hap_org_companys company,
+    hap_om_order_lines line
+    WHERE
+    header.COMPANY_ID = company.COMPANY_ID AND header.CUSTOMER_ID = customer.CUSTOMER_ID
+    and header.HEADER_ID = line.HEADER_ID
+    <if test="companyId = null || companyId =''">
+        and header.COMPANY_ID = #{companyId,jdbcType=DECIMAL}
+    </if>
+    <if test="customerId != null and customerId !=''">
+        and header.CUSTOMER_ID = #{customerId,jdbcType=DECIMAL}
+    </if>
+    <if test="itemId != null and itemId !=''">
+        and line.INVENTORY_ITEM_ID = #{itemId,jdbcType=DECIMAL}
+    </if>
+    <if test="orderNumber != null and orderNumber !=''">
+        and header.ORDER_NUMBER = #{orderNumber,jdbcType=VARCHAR}
+    </if>
+    <if test="orderStatus != null and orderStatus !=''">
+        and header.ORDER_STATUS = #{orderStatus,jdbcType=VARCHAR}
+    </if>
+    </select>-->
+
+
+</mapper>
